@@ -1,0 +1,55 @@
+{
+  "name": "group-grunt-tasks",
+  "version": "0.0.1",
+  "description": "Dynamically generate task group from tagged targets.",
+  "author": {
+    "name": "Andre Torgal",
+    "url": "http://andretorgal.com/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://andrezero.mit-license.org"
+    }
+  ],
+  "keywords": [
+    "grunt",
+    "gruntfile",
+    "utility",
+    "groups",
+    "tags"
+  ],
+  "homepage": "https://github.com/andrezero/group-grunt-tasks",
+  "bugs": "https://github.com/andrezero/group-grunt-tasks/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrezero/group-grunt-tasks"
+  },
+  "readmeFilename": "README.md",
+  "files": [
+    "LICENSE-MIT",
+    "lib"
+  ],
+  "main": "lib/group-grunt-tasks",
+  "scripts": {
+    "test": "grunt"
+  },
+  "dependencies": {
+    "glob": "~4.0.6",
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "colors": "~0.6.2",
+    "grunt": "~0.4.0",
+    "grunt-bump": "0.0.16",
+    "grunt-cli": "^0.1.12",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-conventional-changelog": "~1.1.0",
+    "grunt-git-is-clean": "~0.1.1",
+    "grunt-jsbeautifier": "~0.2.4",
+    "load-grunt-tasks": "~0.6.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

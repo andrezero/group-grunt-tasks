@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '0.10'
+script:
+- grunt ci-build
+deploy:
+  provider: npm
+  email: andre.torgal@gmail.com
+  api_key:
+    secure: QCd7kvom7kDyY/L3bNgS9J/9peRPTynitYvwGqZA4r45qNP6dsigPd1QUwaFvZ/pZanRK+ca2pRcZseCsFA7fcrrmkObbKI7fhX5SYguw4Oh8WaC6Q4CnTT4ssRHvtmVpnEzxG8+hkPHya2r4unY7vVMftyRIFByaPzAdxukqhg=
+  on:
+    tags: true
+    all_branches: true
+    repo: andrezero/tagged-grunt-targets
