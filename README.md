@@ -298,7 +298,7 @@ For instance if you tag some task with `__groups: ['copy']` this tool will overr
 
 ## Credits and Acknowlegdments
 
-Special thanks to [Jaime Beneitez](https://github.com/ngbp/ngbp) for raising the standard on how to setup uniform
+Special thanks to [@JaimeBeneitez](https://github.com/JaimeBeneytez) for raising the standard on how to setup uniform
 grunt task configurations across our growing ecosystem of libraries and apps over at [EF CTX](https://github.com/EFEducationFirstMobile).
 
 
