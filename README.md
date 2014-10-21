@@ -164,7 +164,7 @@ __Arguments:__
 
 __Returns:__
 
-`Object` - The utility instance.
+`Object` - The module api.
 
 __Example__:
 
@@ -177,7 +177,7 @@ var groups = require('group-grunt-tasks')(grunt, options);
 ```
 
 
-#### collect(config)
+#### + groups.collect(config)
 
 Collects groups and grouped tasks/targets.
 
@@ -191,6 +191,10 @@ __Arguments:__
 
 - __config__ : `Object` - The Grunt configuration object.
 
+__Returns:__
+
+`Array` - Collected groups.
+
 __Example:__
 
 ```javascript
@@ -199,7 +203,7 @@ groups.collect(config);
 ```
 
 
-#### registerTask(task, subTasks)
+#### + groups.registerTask(task, subTasks)
 
 Registers the `task` making sure all the `subTasks` that are prefixed with `opts.prefix` exist.
 
@@ -248,41 +252,33 @@ Registering 3 task(s) with prefix "group".
 
 ### Gotchas
 
-#### Order of Grunt setup steps matters
+#### Order of Grunt setup steps DOES matter
 
-This utility needs to be invoked after loading (at least some) config and before invoking 'grunt.initConfig()'.
+This utility needs to be invoked after loading (at least some) config and before invoking `grunt.initConfig()`.
 
 This utility is best used in conjunction with the [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks)
-utility, the [load-grunt-configs](https://github.com/creynders/load-grunt-configs) utility and the
+utility, the [load-grunt-configs](https://github.com/andrezero/load-grunt-config-data) utility and the
 [grunt.task.loadTasks()](http://gruntjs.com/api/grunt.task#grunt.task.loadtasks) strategy.
 
 The only order that makes sense is:
 
 ```javascript
+var loader = require('group-grunt-tasks');
 var groups = require('group-grunt-tasks')(grunt);
 
 // declare/load your config
-var config = {};
+var config = { ... };
+loader.merge(grunt, '/config/**/*.js', config);
 
-require('group-grunt-tasks')(grunt, config);
+// collect groups and register group tasks
+groups.collect(config);
 
 // init config
 grunt.initConfig(config);
 
 // load more tasks
 grunt.loadTasks('grunt/tasks');
-
 ```
-
-#### Order of tasks within a group SHOULD NOT matter
-
-The order of the tasks executed by a certain _tag tasks_ is kind of arbitrary.
-
-This order is, in fact, the order in which the utility discovered them in the provided configuration.
-
-*DO NOT* try to tag interdependent tasks under the same group. Think: if you could run some tasks in parallel then
-it's safe to group them in the same tag. If some task depends on another, not safe.
-
 
 #### Beware of name collisions
 
