@@ -1,4 +1,7 @@
-# group-grunt-tasks [![Build Status: Linux](http://img.shields.io/travis/andrezero/group-grunt-tasks/master.svg?style=flat-square)](https://travis-ci.org/andrezero/group-grunt-tasks) [![npm version](http://img.shields.io/npm/v/group-grunt-tasks.svg?style=flat-square)](https://npmjs.org/group-grunt-tasks)
+# group-grunt-tasks
+
+[![Build Status: Linux](http://img.shields.io/travis/andrezero/group-grunt-tasks/master.svg?style=flat-square)](https://travis-ci.org/andrezero/group-grunt-tasks)
+[![NPM version](http://img.shields.io/npm/v/group-grunt-tasks.svg?style=flat-square)](https://npmjs.org/package/group-grunt-tasks)
 
 > Grunt configuration utility: dynamically generates task groups from tagged tasks/targets.
 
